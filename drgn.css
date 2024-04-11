@@ -1,0 +1,57 @@
+body {
+    font-family: system-ui;
+    color: white;
+    text-align: center;
+    background: url('https://i.postimg.cc/tYp8gvJC/repeating-pattern.jpg') repeat;
+}
+
+.connect-wallet-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.dragon-icon-left,
+.dragon-icon-right {
+    width: 50px;
+    height: auto;
+}
+
+.connect-wallet-content {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #242b3a;
+    border: 2px solid #ff6347;
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+.connect-wallet-content h3 {
+    font-size: 24px;
+    color: #ff6347;
+}
+
+.connect-wallet-content p {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.connect-button-container {
+    margin-top: 20px;
+}
+
+.connect-button-container button {
+    padding: 15px 40px;
+    background-color: #ff6347;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+.connect-button-container button:hover {
+    background-color: #2c3747;
+}
