@@ -285,7 +285,7 @@
             <p>By connecting your wallet, you'll be able to participate in token swaps, view your token balance, and access other exclusive features.</p>
             <div class="input-container">
                 <input type="text" placeholder="Type in your AVAX address" onfocus="clearPlaceholder(this)">
-                <input type="submit" value="Connect Wallet">
+                <input type="submit" value="Connect Wallet" onclick="connectWallet()">
             </div>
         </div>
         <img src="https://i.postimg.cc/jWMJjgXk/tab-icon.png" alt="Dragon Token Image" class="dragon-icon-right">
@@ -297,9 +297,10 @@
         <h2 class="whitelist-heading">Whitelist Checker</h2>
         <p>Check to see if you are on the whitelist</p>
         <div class="input-container">
-            <input type="text" placeholder="Type in your AVAX address" onfocus="clearPlaceholder(this)">
-            <input type="submit" value="Submit">
+            <input id="whitelist-address-input" type="text" placeholder="Type in your AVAX address" onfocus="clearPlaceholder(this)">
+            <input id="whitelist-check-submit" type="submit" value="Submit">
         </div>
+        <p id="whitelist-result"></p>
     </div>
 </div>
 
@@ -310,23 +311,6 @@
 
 <div style="height: 2000px;"></div>
 
-<script>
-    function openTab(tabName) {
-        var i, tabContent;
-        tabContent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabContent.length; i++) {
-            tabContent[i].style.display = "none";
-        }
-        document.getElementById(tabName).style.display = "block";
-    }
-
-    function clearPlaceholder(element) {
-        element.placeholder = '';
-    }
-</script>
-
-</body>
-</html>
 <script>
     function openTab(tabName) {
         var i, tabContent;
