@@ -344,27 +344,53 @@
         }
     }
 
-    async function checkAllowlist(address) {
-        try {
-            // Check if the address is allowlisted
-            const isAllowlisted = await contractInstance.methods.allowlisted(address).call();
-            // Display message based on allowlist status
-            if (isAllowlisted) {
-                document.getElementById('whitelist-result').innerText = "WooHoo! You're allowlisted";
-            } else {
-                document.getElementById('whitelist-result').innerText = "Womp womp. You're not allowlisted";
-            }
-        } catch (error) {
-            console.error('Error checking allowlist:', error);
+   async function checkAllowlistLevel(address) {
+    try {
+        // Call the allowlisted function to get the whitelist level
+        const whitelistLevel = await contractInstance.methods.allowlisted(address).call();
+        
+        // Determine the whitelist level based on the returned value
+        let level = "";
+        switch (whitelistLevel) {
+            case 1:
+                level = "Level 1";
+                break;
+            case 2:
+                level = "Level 2";
+                break;
+            case 3:
+                level = "Level 3";
+                break;
+            case 4:
+                level = "Level 4";
+                break;
+            case 5:
+                level = "Level 5";
+                break;
+            case 6:
+                level = "Level 6";
+                break;
+            case 7:
+                level = "Level 7";
+                break;
+            default:
+                level = "Not on whitelist";
         }
+        
+        // Display the whitelist level
+        document.getElementById('whitelist-level').innerText = level;
+    } catch (error) {
+        console.error('Error checking whitelist level:', error);
     }
+}
 
-    document.getElementById('whitelist-check-submit').addEventListener('click', async () => {
-        // Get the address input value
-        const addressInput = document.getElementById('whitelist-address-input').value;
-        // Call the allowlist checker function
-        await checkAllowlist(addressInput);
-    });
+document.getElementById('check-whitelist-level').addEventListener('click', async () => {
+    // Get the address input value
+    const addressInput = document.getElementById('address-input').value;
+    // Call the function to check whitelist level
+    await checkAllowlistLevel(addressInput);
+});
+
 </script>
 
 </body>
